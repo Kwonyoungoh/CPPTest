@@ -1,11 +1,33 @@
-﻿// CPPTest.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
-//
+﻿
+#include <iostream> // 입출력을 위한 헤더파일, c++표준 라이브러리다.
+using namespace std;// std namespace사용하겠다.
 
-#include <iostream>
+//네임스페이스
+namespace Test {
+    void name1() {
+        cout << "네임1\n";
+    }
+}
+
+//참조자
+void swap_ref(int& num1, int& num2) {
+    int temp = num1;
+    num1 = num2;
+    num2 = temp;
+    return;
+}
 
 int main()
 {
-    std::cout << "Hello YoungOh!!! This is Test!!\n";
+    int val1 = 2;
+    int val2 = 3;
+
+    swap_ref(val1, val2);
+    val1++;
+    cout << val1 << " " << val2 << "\n";
+    // 네임스페이스 테스트
+    Test::name1();
+    cout << "Hello YoungOh!!! This is Test!!\n";
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
